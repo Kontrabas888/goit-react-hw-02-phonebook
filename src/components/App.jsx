@@ -8,17 +8,12 @@ import { Title } from './Title.jsx';
 import { ContactList } from './ContactList.jsx';
 import { ContactListItem } from "./ContactListItem.jsx";
 
+import contactsData from './contacts.js';
+
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
-    filter: '',
-    name: '',
-    number: ''
+    contacts: contactsData,
+    filter: ''
   };
 
   handleFilterChange = (e) => {
@@ -93,7 +88,7 @@ export class App extends Component {
                 />
               </div>
             ) : (
-              <Title tag="h3">No contacts</Title>
+              <Title tag="h3">No contact</Title>
             )}
           </div>
         </AppLayout>
